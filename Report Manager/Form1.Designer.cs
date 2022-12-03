@@ -41,19 +41,28 @@ namespace Report_Manager
             this.Air_Temp_Label = new System.Windows.Forms.Label();
             this.Comment_Label = new System.Windows.Forms.Label();
             this.Track_Label = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Track_Name_Textbox = new System.Windows.Forms.TextBox();
+            this.Car_Name_Textbox = new System.Windows.Forms.TextBox();
             this.Car_Name_Label = new System.Windows.Forms.Label();
             this.Date_Textbox = new System.Windows.Forms.TextBox();
             this.Date_Label = new System.Windows.Forms.Label();
             this.Driver_Textbox = new System.Windows.Forms.TextBox();
             this.Driver_Label = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.General_Comment_Section = new System.Windows.Forms.RichTextBox();
             this.Suspension = new System.Windows.Forms.TabPage();
+            this.Rear_Camber_Checkbox = new System.Windows.Forms.CheckBox();
+            this.RR_camber = new System.Windows.Forms.TextBox();
+            this.RR_camber_scroll = new System.Windows.Forms.HScrollBar();
+            this.RL_camber = new System.Windows.Forms.TextBox();
+            this.RL_camber_scroll = new System.Windows.Forms.HScrollBar();
+            this.Car_Model_Rear_View_Picturebox_Suspension = new System.Windows.Forms.PictureBox();
+            this.Car_Model_Front_View_Picturebox_Suspension = new System.Windows.Forms.PictureBox();
+            this.RR_Camber_Picturebox = new System.Windows.Forms.PictureBox();
+            this.RL_Camber_Picturebox = new System.Windows.Forms.PictureBox();
             this.Car_Model_Side_View_Picturebox_Suspension = new System.Windows.Forms.PictureBox();
             this.FR_Caster_Picturebox = new System.Windows.Forms.PictureBox();
             this.FL_Caster_Picturebox = new System.Windows.Forms.PictureBox();
-            this.Car_Model_Picturebox_Suspension = new System.Windows.Forms.PictureBox();
+            this.Car_Model_Top_View_Picturebox_Suspension = new System.Windows.Forms.PictureBox();
             this.Front_Caster_Checkbox = new System.Windows.Forms.CheckBox();
             this.FR_caster = new System.Windows.Forms.TextBox();
             this.FR_caster_scroll = new System.Windows.Forms.HScrollBar();
@@ -70,14 +79,14 @@ namespace Report_Manager
             this.Front_Camber_Checkbox = new System.Windows.Forms.CheckBox();
             this.FR_camber = new System.Windows.Forms.TextBox();
             this.FR_camber_scroll = new System.Windows.Forms.HScrollBar();
-            this.FR_Picturebox = new System.Windows.Forms.PictureBox();
             this.FL_camber = new System.Windows.Forms.TextBox();
             this.FL_camber_scroll = new System.Windows.Forms.HScrollBar();
             this.RR_label = new System.Windows.Forms.Label();
             this.RL_label = new System.Windows.Forms.Label();
             this.FR_label = new System.Windows.Forms.Label();
             this.FL_label = new System.Windows.Forms.Label();
-            this.FL_Picturebox = new System.Windows.Forms.PictureBox();
+            this.FL_Camber_Picturebox = new System.Windows.Forms.PictureBox();
+            this.FR_Camber_Picturebox = new System.Windows.Forms.PictureBox();
             this.Tyres = new System.Windows.Forms.TabPage();
             this.Fuel_Left_Numeric = new System.Windows.Forms.NumericUpDown();
             this.Fuel_Numeric = new System.Windows.Forms.NumericUpDown();
@@ -121,12 +130,16 @@ namespace Report_Manager
             this.General.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Air_Temp_Numeric)).BeginInit();
             this.Suspension.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Car_Model_Rear_View_Picturebox_Suspension)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Car_Model_Front_View_Picturebox_Suspension)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RR_Camber_Picturebox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RL_Camber_Picturebox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Car_Model_Side_View_Picturebox_Suspension)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FR_Caster_Picturebox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FL_Caster_Picturebox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Car_Model_Picturebox_Suspension)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FR_Picturebox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FL_Picturebox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Car_Model_Top_View_Picturebox_Suspension)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FL_Camber_Picturebox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FR_Camber_Picturebox)).BeginInit();
             this.Tyres.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Fuel_Left_Numeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Fuel_Numeric)).BeginInit();
@@ -169,14 +182,14 @@ namespace Report_Manager
             this.General.Controls.Add(this.Air_Temp_Label);
             this.General.Controls.Add(this.Comment_Label);
             this.General.Controls.Add(this.Track_Label);
-            this.General.Controls.Add(this.textBox2);
-            this.General.Controls.Add(this.textBox1);
+            this.General.Controls.Add(this.Track_Name_Textbox);
+            this.General.Controls.Add(this.Car_Name_Textbox);
             this.General.Controls.Add(this.Car_Name_Label);
             this.General.Controls.Add(this.Date_Textbox);
             this.General.Controls.Add(this.Date_Label);
             this.General.Controls.Add(this.Driver_Textbox);
             this.General.Controls.Add(this.Driver_Label);
-            this.General.Controls.Add(this.richTextBox1);
+            this.General.Controls.Add(this.General_Comment_Section);
             this.General.Location = new System.Drawing.Point(4, 24);
             this.General.Name = "General";
             this.General.Padding = new System.Windows.Forms.Padding(3);
@@ -232,19 +245,19 @@ namespace Report_Manager
             this.Track_Label.TabIndex = 8;
             this.Track_Label.Text = "Track";
             // 
-            // textBox2
+            // Track_Name_Textbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(125, 152);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(204, 23);
-            this.textBox2.TabIndex = 7;
+            this.Track_Name_Textbox.Location = new System.Drawing.Point(125, 152);
+            this.Track_Name_Textbox.Name = "Track_Name_Textbox";
+            this.Track_Name_Textbox.Size = new System.Drawing.Size(204, 23);
+            this.Track_Name_Textbox.TabIndex = 7;
             // 
-            // textBox1
+            // Car_Name_Textbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(125, 113);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(204, 23);
-            this.textBox1.TabIndex = 6;
+            this.Car_Name_Textbox.Location = new System.Drawing.Point(125, 113);
+            this.Car_Name_Textbox.Name = "Car_Name_Textbox";
+            this.Car_Name_Textbox.Size = new System.Drawing.Size(204, 23);
+            this.Car_Name_Textbox.TabIndex = 6;
             // 
             // Car_Name_Label
             // 
@@ -290,21 +303,31 @@ namespace Report_Manager
             this.Driver_Label.TabIndex = 1;
             this.Driver_Label.Text = "Driver";
             // 
-            // richTextBox1
+            // General_Comment_Section
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(36, 271);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(559, 329);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.General_Comment_Section.Location = new System.Drawing.Point(36, 271);
+            this.General_Comment_Section.Name = "General_Comment_Section";
+            this.General_Comment_Section.Size = new System.Drawing.Size(559, 329);
+            this.General_Comment_Section.TabIndex = 0;
+            this.General_Comment_Section.Text = "";
             // 
             // Suspension
             // 
+            this.Suspension.AutoScroll = true;
             this.Suspension.BackColor = System.Drawing.Color.LightGray;
+            this.Suspension.Controls.Add(this.Rear_Camber_Checkbox);
+            this.Suspension.Controls.Add(this.RR_camber);
+            this.Suspension.Controls.Add(this.RR_camber_scroll);
+            this.Suspension.Controls.Add(this.RL_camber);
+            this.Suspension.Controls.Add(this.RL_camber_scroll);
+            this.Suspension.Controls.Add(this.Car_Model_Rear_View_Picturebox_Suspension);
+            this.Suspension.Controls.Add(this.Car_Model_Front_View_Picturebox_Suspension);
+            this.Suspension.Controls.Add(this.RR_Camber_Picturebox);
+            this.Suspension.Controls.Add(this.RL_Camber_Picturebox);
             this.Suspension.Controls.Add(this.Car_Model_Side_View_Picturebox_Suspension);
             this.Suspension.Controls.Add(this.FR_Caster_Picturebox);
             this.Suspension.Controls.Add(this.FL_Caster_Picturebox);
-            this.Suspension.Controls.Add(this.Car_Model_Picturebox_Suspension);
+            this.Suspension.Controls.Add(this.Car_Model_Top_View_Picturebox_Suspension);
             this.Suspension.Controls.Add(this.Front_Caster_Checkbox);
             this.Suspension.Controls.Add(this.FR_caster);
             this.Suspension.Controls.Add(this.FR_caster_scroll);
@@ -321,14 +344,14 @@ namespace Report_Manager
             this.Suspension.Controls.Add(this.Front_Camber_Checkbox);
             this.Suspension.Controls.Add(this.FR_camber);
             this.Suspension.Controls.Add(this.FR_camber_scroll);
-            this.Suspension.Controls.Add(this.FR_Picturebox);
             this.Suspension.Controls.Add(this.FL_camber);
             this.Suspension.Controls.Add(this.FL_camber_scroll);
             this.Suspension.Controls.Add(this.RR_label);
             this.Suspension.Controls.Add(this.RL_label);
             this.Suspension.Controls.Add(this.FR_label);
             this.Suspension.Controls.Add(this.FL_label);
-            this.Suspension.Controls.Add(this.FL_Picturebox);
+            this.Suspension.Controls.Add(this.FL_Camber_Picturebox);
+            this.Suspension.Controls.Add(this.FR_Camber_Picturebox);
             this.Suspension.Location = new System.Drawing.Point(4, 24);
             this.Suspension.Name = "Suspension";
             this.Suspension.Padding = new System.Windows.Forms.Padding(3);
@@ -336,9 +359,94 @@ namespace Report_Manager
             this.Suspension.TabIndex = 1;
             this.Suspension.Text = "Suspension";
             // 
+            // Rear_Camber_Checkbox
+            // 
+            this.Rear_Camber_Checkbox.AutoSize = true;
+            this.Rear_Camber_Checkbox.Location = new System.Drawing.Point(431, 493);
+            this.Rear_Camber_Checkbox.Name = "Rear_Camber_Checkbox";
+            this.Rear_Camber_Checkbox.Size = new System.Drawing.Size(60, 19);
+            this.Rear_Camber_Checkbox.TabIndex = 45;
+            this.Rear_Camber_Checkbox.Text = "Match";
+            this.Rear_Camber_Checkbox.UseVisualStyleBackColor = true;
+            this.Rear_Camber_Checkbox.CheckedChanged += new System.EventHandler(this.Rear_Camber_Checkbox_CheckedChanged);
+            // 
+            // RR_camber
+            // 
+            this.RR_camber.Location = new System.Drawing.Point(577, 489);
+            this.RR_camber.Name = "RR_camber";
+            this.RR_camber.Size = new System.Drawing.Size(152, 23);
+            this.RR_camber.TabIndex = 44;
+            // 
+            // RR_camber_scroll
+            // 
+            this.RR_camber_scroll.LargeChange = 1;
+            this.RR_camber_scroll.Location = new System.Drawing.Point(577, 519);
+            this.RR_camber_scroll.Maximum = 500;
+            this.RR_camber_scroll.Minimum = -500;
+            this.RR_camber_scroll.Name = "RR_camber_scroll";
+            this.RR_camber_scroll.Size = new System.Drawing.Size(150, 17);
+            this.RR_camber_scroll.TabIndex = 43;
+            this.RR_camber_scroll.ValueChanged += new System.EventHandler(this.RR_camber_scroll_ValueChanged);
+            // 
+            // RL_camber
+            // 
+            this.RL_camber.Location = new System.Drawing.Point(202, 489);
+            this.RL_camber.Name = "RL_camber";
+            this.RL_camber.Size = new System.Drawing.Size(153, 23);
+            this.RL_camber.TabIndex = 42;
+            // 
+            // RL_camber_scroll
+            // 
+            this.RL_camber_scroll.LargeChange = 1;
+            this.RL_camber_scroll.Location = new System.Drawing.Point(202, 519);
+            this.RL_camber_scroll.Maximum = 500;
+            this.RL_camber_scroll.Minimum = -500;
+            this.RL_camber_scroll.Name = "RL_camber_scroll";
+            this.RL_camber_scroll.Size = new System.Drawing.Size(153, 17);
+            this.RL_camber_scroll.TabIndex = 41;
+            this.RL_camber_scroll.ValueChanged += new System.EventHandler(this.RL_camber_scroll_ValueChanged);
+            // 
+            // Car_Model_Rear_View_Picturebox_Suspension
+            // 
+            this.Car_Model_Rear_View_Picturebox_Suspension.Location = new System.Drawing.Point(360, 333);
+            this.Car_Model_Rear_View_Picturebox_Suspension.Name = "Car_Model_Rear_View_Picturebox_Suspension";
+            this.Car_Model_Rear_View_Picturebox_Suspension.Size = new System.Drawing.Size(213, 150);
+            this.Car_Model_Rear_View_Picturebox_Suspension.TabIndex = 40;
+            this.Car_Model_Rear_View_Picturebox_Suspension.TabStop = false;
+            this.Car_Model_Rear_View_Picturebox_Suspension.Paint += new System.Windows.Forms.PaintEventHandler(this.Car_Model_Rear_View_Picturebox_Suspension_Paint);
+            // 
+            // Car_Model_Front_View_Picturebox_Suspension
+            // 
+            this.Car_Model_Front_View_Picturebox_Suspension.Location = new System.Drawing.Point(360, 86);
+            this.Car_Model_Front_View_Picturebox_Suspension.Name = "Car_Model_Front_View_Picturebox_Suspension";
+            this.Car_Model_Front_View_Picturebox_Suspension.Size = new System.Drawing.Size(213, 150);
+            this.Car_Model_Front_View_Picturebox_Suspension.TabIndex = 39;
+            this.Car_Model_Front_View_Picturebox_Suspension.TabStop = false;
+            this.Car_Model_Front_View_Picturebox_Suspension.Paint += new System.Windows.Forms.PaintEventHandler(this.Car_Model_Front_View_Picturebox_Suspension_Paint);
+            // 
+            // RR_Camber_Picturebox
+            // 
+            this.RR_Camber_Picturebox.BackColor = System.Drawing.Color.Transparent;
+            this.RR_Camber_Picturebox.Location = new System.Drawing.Point(579, 333);
+            this.RR_Camber_Picturebox.Name = "RR_Camber_Picturebox";
+            this.RR_Camber_Picturebox.Size = new System.Drawing.Size(150, 150);
+            this.RR_Camber_Picturebox.TabIndex = 38;
+            this.RR_Camber_Picturebox.TabStop = false;
+            this.RR_Camber_Picturebox.Paint += new System.Windows.Forms.PaintEventHandler(this.RR_Camber_Picturebox_Paint);
+            // 
+            // RL_Camber_Picturebox
+            // 
+            this.RL_Camber_Picturebox.BackColor = System.Drawing.Color.Transparent;
+            this.RL_Camber_Picturebox.Location = new System.Drawing.Point(204, 333);
+            this.RL_Camber_Picturebox.Name = "RL_Camber_Picturebox";
+            this.RL_Camber_Picturebox.Size = new System.Drawing.Size(150, 150);
+            this.RL_Camber_Picturebox.TabIndex = 37;
+            this.RL_Camber_Picturebox.TabStop = false;
+            this.RL_Camber_Picturebox.Paint += new System.Windows.Forms.PaintEventHandler(this.RL_Camber_Picturebox_Paint);
+            // 
             // Car_Model_Side_View_Picturebox_Suspension
             // 
-            this.Car_Model_Side_View_Picturebox_Suspension.Location = new System.Drawing.Point(1191, 419);
+            this.Car_Model_Side_View_Picturebox_Suspension.Location = new System.Drawing.Point(997, 303);
             this.Car_Model_Side_View_Picturebox_Suspension.Name = "Car_Model_Side_View_Picturebox_Suspension";
             this.Car_Model_Side_View_Picturebox_Suspension.Size = new System.Drawing.Size(588, 209);
             this.Car_Model_Side_View_Picturebox_Suspension.TabIndex = 36;
@@ -348,9 +456,9 @@ namespace Report_Manager
             // FR_Caster_Picturebox
             // 
             this.FR_Caster_Picturebox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.FR_Caster_Picturebox.Location = new System.Drawing.Point(1579, 213);
+            this.FR_Caster_Picturebox.Location = new System.Drawing.Point(1424, 133);
             this.FR_Caster_Picturebox.Name = "FR_Caster_Picturebox";
-            this.FR_Caster_Picturebox.Size = new System.Drawing.Size(200, 200);
+            this.FR_Caster_Picturebox.Size = new System.Drawing.Size(161, 164);
             this.FR_Caster_Picturebox.TabIndex = 35;
             this.FR_Caster_Picturebox.TabStop = false;
             this.FR_Caster_Picturebox.Paint += new System.Windows.Forms.PaintEventHandler(this.FR_Caster_Picturebox_Paint);
@@ -358,26 +466,26 @@ namespace Report_Manager
             // FL_Caster_Picturebox
             // 
             this.FL_Caster_Picturebox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.FL_Caster_Picturebox.Location = new System.Drawing.Point(1579, 634);
+            this.FL_Caster_Picturebox.Location = new System.Drawing.Point(1424, 518);
             this.FL_Caster_Picturebox.Name = "FL_Caster_Picturebox";
-            this.FL_Caster_Picturebox.Size = new System.Drawing.Size(200, 200);
+            this.FL_Caster_Picturebox.Size = new System.Drawing.Size(161, 164);
             this.FL_Caster_Picturebox.TabIndex = 34;
             this.FL_Caster_Picturebox.TabStop = false;
             this.FL_Caster_Picturebox.Paint += new System.Windows.Forms.PaintEventHandler(this.FL_Caster_Picturebox_Paint);
             // 
-            // Car_Model_Picturebox_Suspension
+            // Car_Model_Top_View_Picturebox_Suspension
             // 
-            this.Car_Model_Picturebox_Suspension.Location = new System.Drawing.Point(481, 154);
-            this.Car_Model_Picturebox_Suspension.Name = "Car_Model_Picturebox_Suspension";
-            this.Car_Model_Picturebox_Suspension.Size = new System.Drawing.Size(320, 700);
-            this.Car_Model_Picturebox_Suspension.TabIndex = 33;
-            this.Car_Model_Picturebox_Suspension.TabStop = false;
-            this.Car_Model_Picturebox_Suspension.Paint += new System.Windows.Forms.PaintEventHandler(this.Car_Model_Picturebox_Suspension_Paint);
+            this.Car_Model_Top_View_Picturebox_Suspension.Location = new System.Drawing.Point(360, 579);
+            this.Car_Model_Top_View_Picturebox_Suspension.Name = "Car_Model_Top_View_Picturebox_Suspension";
+            this.Car_Model_Top_View_Picturebox_Suspension.Size = new System.Drawing.Size(213, 297);
+            this.Car_Model_Top_View_Picturebox_Suspension.TabIndex = 33;
+            this.Car_Model_Top_View_Picturebox_Suspension.TabStop = false;
+            this.Car_Model_Top_View_Picturebox_Suspension.Paint += new System.Windows.Forms.PaintEventHandler(this.Car_Model_Top_View_Picturebox_Suspension_Paint);
             // 
             // Front_Caster_Checkbox
             // 
             this.Front_Caster_Checkbox.AutoSize = true;
-            this.Front_Caster_Checkbox.Location = new System.Drawing.Point(1794, 842);
+            this.Front_Caster_Checkbox.Location = new System.Drawing.Point(1347, 663);
             this.Front_Caster_Checkbox.Name = "Front_Caster_Checkbox";
             this.Front_Caster_Checkbox.Size = new System.Drawing.Size(60, 19);
             this.Front_Caster_Checkbox.TabIndex = 32;
@@ -386,7 +494,7 @@ namespace Report_Manager
             // 
             // FR_caster
             // 
-            this.FR_caster.Location = new System.Drawing.Point(1579, 154);
+            this.FR_caster.Location = new System.Drawing.Point(1385, 79);
             this.FR_caster.Name = "FR_caster";
             this.FR_caster.Size = new System.Drawing.Size(200, 23);
             this.FR_caster.TabIndex = 31;
@@ -394,7 +502,7 @@ namespace Report_Manager
             // FR_caster_scroll
             // 
             this.FR_caster_scroll.LargeChange = 1;
-            this.FR_caster_scroll.Location = new System.Drawing.Point(1579, 180);
+            this.FR_caster_scroll.Location = new System.Drawing.Point(1385, 105);
             this.FR_caster_scroll.Maximum = 500;
             this.FR_caster_scroll.Minimum = -500;
             this.FR_caster_scroll.Name = "FR_caster_scroll";
@@ -404,7 +512,7 @@ namespace Report_Manager
             // 
             // FL_caster
             // 
-            this.FL_caster.Location = new System.Drawing.Point(1579, 843);
+            this.FL_caster.Location = new System.Drawing.Point(1385, 688);
             this.FL_caster.Name = "FL_caster";
             this.FL_caster.Size = new System.Drawing.Size(200, 23);
             this.FL_caster.TabIndex = 29;
@@ -412,7 +520,7 @@ namespace Report_Manager
             // FL_caster_scroll
             // 
             this.FL_caster_scroll.LargeChange = 1;
-            this.FL_caster_scroll.Location = new System.Drawing.Point(1579, 869);
+            this.FL_caster_scroll.Location = new System.Drawing.Point(1385, 714);
             this.FL_caster_scroll.Maximum = 500;
             this.FL_caster_scroll.Minimum = -500;
             this.FL_caster_scroll.Name = "FL_caster_scroll";
@@ -423,7 +531,7 @@ namespace Report_Manager
             // Front_Toe_Checkbox
             // 
             this.Front_Toe_Checkbox.AutoSize = true;
-            this.Front_Toe_Checkbox.Location = new System.Drawing.Point(339, 316);
+            this.Front_Toe_Checkbox.Location = new System.Drawing.Point(590, 636);
             this.Front_Toe_Checkbox.Name = "Front_Toe_Checkbox";
             this.Front_Toe_Checkbox.Size = new System.Drawing.Size(60, 19);
             this.Front_Toe_Checkbox.TabIndex = 27;
@@ -433,44 +541,44 @@ namespace Report_Manager
             // 
             // FR_toe
             // 
-            this.FR_toe.Location = new System.Drawing.Point(890, 312);
+            this.FR_toe.Location = new System.Drawing.Point(135, 661);
             this.FR_toe.Name = "FR_toe";
-            this.FR_toe.Size = new System.Drawing.Size(200, 23);
+            this.FR_toe.Size = new System.Drawing.Size(205, 23);
             this.FR_toe.TabIndex = 26;
             // 
             // FR_toe_scroll
             // 
             this.FR_toe_scroll.LargeChange = 1;
-            this.FR_toe_scroll.Location = new System.Drawing.Point(890, 338);
+            this.FR_toe_scroll.Location = new System.Drawing.Point(135, 687);
             this.FR_toe_scroll.Maximum = 500;
             this.FR_toe_scroll.Minimum = -500;
             this.FR_toe_scroll.Name = "FR_toe_scroll";
-            this.FR_toe_scroll.Size = new System.Drawing.Size(200, 17);
+            this.FR_toe_scroll.Size = new System.Drawing.Size(205, 17);
             this.FR_toe_scroll.TabIndex = 25;
             this.FR_toe_scroll.ValueChanged += new System.EventHandler(this.FR_toe_scroll_ValueChanged);
             // 
             // FL_toe
             // 
-            this.FL_toe.Location = new System.Drawing.Point(130, 312);
+            this.FL_toe.Location = new System.Drawing.Point(590, 661);
             this.FL_toe.Name = "FL_toe";
-            this.FL_toe.Size = new System.Drawing.Size(200, 23);
+            this.FL_toe.Size = new System.Drawing.Size(205, 23);
             this.FL_toe.TabIndex = 24;
             // 
             // FL_toe_scroll
             // 
             this.FL_toe_scroll.LargeChange = 1;
-            this.FL_toe_scroll.Location = new System.Drawing.Point(130, 338);
+            this.FL_toe_scroll.Location = new System.Drawing.Point(590, 687);
             this.FL_toe_scroll.Maximum = 500;
             this.FL_toe_scroll.Minimum = -500;
             this.FL_toe_scroll.Name = "FL_toe_scroll";
-            this.FL_toe_scroll.Size = new System.Drawing.Size(200, 17);
+            this.FL_toe_scroll.Size = new System.Drawing.Size(205, 17);
             this.FL_toe_scroll.TabIndex = 23;
             this.FL_toe_scroll.ValueChanged += new System.EventHandler(this.FL_toe_scroll_ValueChanged);
             // 
             // Caster_Label_Front
             // 
             this.Caster_Label_Front.AutoSize = true;
-            this.Caster_Label_Front.Location = new System.Drawing.Point(1533, 843);
+            this.Caster_Label_Front.Location = new System.Drawing.Point(1339, 688);
             this.Caster_Label_Front.Name = "Caster_Label_Front";
             this.Caster_Label_Front.Size = new System.Drawing.Size(40, 15);
             this.Caster_Label_Front.TabIndex = 22;
@@ -479,7 +587,7 @@ namespace Report_Manager
             // Toe_Label_Front
             // 
             this.Toe_Label_Front.AutoSize = true;
-            this.Toe_Label_Front.Location = new System.Drawing.Point(72, 317);
+            this.Toe_Label_Front.Location = new System.Drawing.Point(455, 551);
             this.Toe_Label_Front.Name = "Toe_Label_Front";
             this.Toe_Label_Front.Size = new System.Drawing.Size(25, 15);
             this.Toe_Label_Front.TabIndex = 21;
@@ -488,7 +596,7 @@ namespace Report_Manager
             // Camber_Label_Front
             // 
             this.Camber_Label_Front.AutoSize = true;
-            this.Camber_Label_Front.Location = new System.Drawing.Point(72, 266);
+            this.Camber_Label_Front.Location = new System.Drawing.Point(431, 52);
             this.Camber_Label_Front.Name = "Camber_Label_Front";
             this.Camber_Label_Front.Size = new System.Drawing.Size(49, 15);
             this.Camber_Label_Front.TabIndex = 20;
@@ -497,7 +605,7 @@ namespace Report_Manager
             // Front_Camber_Checkbox
             // 
             this.Front_Camber_Checkbox.AutoSize = true;
-            this.Front_Camber_Checkbox.Location = new System.Drawing.Point(339, 266);
+            this.Front_Camber_Checkbox.Location = new System.Drawing.Point(431, 246);
             this.Front_Camber_Checkbox.Name = "Front_Camber_Checkbox";
             this.Front_Camber_Checkbox.Size = new System.Drawing.Size(60, 19);
             this.Front_Camber_Checkbox.TabIndex = 19;
@@ -507,54 +615,44 @@ namespace Report_Manager
             // 
             // FR_camber
             // 
-            this.FR_camber.Location = new System.Drawing.Point(890, 263);
+            this.FR_camber.Location = new System.Drawing.Point(578, 242);
             this.FR_camber.Name = "FR_camber";
-            this.FR_camber.Size = new System.Drawing.Size(200, 23);
+            this.FR_camber.Size = new System.Drawing.Size(151, 23);
             this.FR_camber.TabIndex = 18;
             // 
             // FR_camber_scroll
             // 
             this.FR_camber_scroll.LargeChange = 1;
-            this.FR_camber_scroll.Location = new System.Drawing.Point(890, 289);
+            this.FR_camber_scroll.Location = new System.Drawing.Point(578, 268);
             this.FR_camber_scroll.Maximum = 500;
             this.FR_camber_scroll.Minimum = -500;
             this.FR_camber_scroll.Name = "FR_camber_scroll";
-            this.FR_camber_scroll.Size = new System.Drawing.Size(200, 17);
+            this.FR_camber_scroll.Size = new System.Drawing.Size(151, 17);
             this.FR_camber_scroll.TabIndex = 17;
             this.FR_camber_scroll.ValueChanged += new System.EventHandler(this.FR_camber_scroll_ValueChanged);
             // 
-            // FR_Picturebox
-            // 
-            this.FR_Picturebox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.FR_Picturebox.Location = new System.Drawing.Point(807, 52);
-            this.FR_Picturebox.Name = "FR_Picturebox";
-            this.FR_Picturebox.Size = new System.Drawing.Size(200, 200);
-            this.FR_Picturebox.TabIndex = 16;
-            this.FR_Picturebox.TabStop = false;
-            this.FR_Picturebox.Paint += new System.Windows.Forms.PaintEventHandler(this.FR_Picturebox_Paint);
-            // 
             // FL_camber
             // 
-            this.FL_camber.Location = new System.Drawing.Point(130, 263);
+            this.FL_camber.Location = new System.Drawing.Point(202, 242);
             this.FL_camber.Name = "FL_camber";
-            this.FL_camber.Size = new System.Drawing.Size(202, 23);
+            this.FL_camber.Size = new System.Drawing.Size(153, 23);
             this.FL_camber.TabIndex = 15;
             // 
             // FL_camber_scroll
             // 
             this.FL_camber_scroll.LargeChange = 1;
-            this.FL_camber_scroll.Location = new System.Drawing.Point(130, 289);
+            this.FL_camber_scroll.Location = new System.Drawing.Point(202, 266);
             this.FL_camber_scroll.Maximum = 500;
             this.FL_camber_scroll.Minimum = -500;
             this.FL_camber_scroll.Name = "FL_camber_scroll";
-            this.FL_camber_scroll.Size = new System.Drawing.Size(200, 17);
+            this.FL_camber_scroll.Size = new System.Drawing.Size(154, 19);
             this.FL_camber_scroll.TabIndex = 14;
             this.FL_camber_scroll.ValueChanged += new System.EventHandler(this.FL_camber_scroll_ValueChanged);
             // 
             // RR_label
             // 
             this.RR_label.AutoSize = true;
-            this.RR_label.Location = new System.Drawing.Point(312, 687);
+            this.RR_label.Location = new System.Drawing.Point(735, 388);
             this.RR_label.Name = "RR_label";
             this.RR_label.Size = new System.Drawing.Size(21, 15);
             this.RR_label.TabIndex = 13;
@@ -563,7 +661,7 @@ namespace Report_Manager
             // RL_label
             // 
             this.RL_label.AutoSize = true;
-            this.RL_label.Location = new System.Drawing.Point(143, 687);
+            this.RL_label.Location = new System.Drawing.Point(178, 388);
             this.RL_label.Name = "RL_label";
             this.RL_label.Size = new System.Drawing.Size(20, 15);
             this.RL_label.TabIndex = 12;
@@ -572,7 +670,7 @@ namespace Report_Manager
             // FR_label
             // 
             this.FR_label.AutoSize = true;
-            this.FR_label.Location = new System.Drawing.Point(980, 34);
+            this.FR_label.Location = new System.Drawing.Point(735, 151);
             this.FR_label.Name = "FR_label";
             this.FR_label.Size = new System.Drawing.Size(20, 15);
             this.FR_label.TabIndex = 11;
@@ -582,21 +680,31 @@ namespace Report_Manager
             // 
             this.FL_label.AutoSize = true;
             this.FL_label.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.FL_label.Location = new System.Drawing.Point(203, 34);
+            this.FL_label.Location = new System.Drawing.Point(178, 151);
             this.FL_label.Name = "FL_label";
             this.FL_label.Size = new System.Drawing.Size(19, 15);
             this.FL_label.TabIndex = 10;
             this.FL_label.Text = "FL";
             // 
-            // FL_Picturebox
+            // FL_Camber_Picturebox
             // 
-            this.FL_Picturebox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.FL_Picturebox.Location = new System.Drawing.Point(275, 52);
-            this.FL_Picturebox.Name = "FL_Picturebox";
-            this.FL_Picturebox.Size = new System.Drawing.Size(200, 200);
-            this.FL_Picturebox.TabIndex = 0;
-            this.FL_Picturebox.TabStop = false;
-            this.FL_Picturebox.Paint += new System.Windows.Forms.PaintEventHandler(this.FL_Picturebox_Paint);
+            this.FL_Camber_Picturebox.BackColor = System.Drawing.Color.Transparent;
+            this.FL_Camber_Picturebox.Location = new System.Drawing.Point(202, 86);
+            this.FL_Camber_Picturebox.Name = "FL_Camber_Picturebox";
+            this.FL_Camber_Picturebox.Size = new System.Drawing.Size(152, 150);
+            this.FL_Camber_Picturebox.TabIndex = 0;
+            this.FL_Camber_Picturebox.TabStop = false;
+            this.FL_Camber_Picturebox.Paint += new System.Windows.Forms.PaintEventHandler(this.FL_Camber_Picturebox_Paint);
+            // 
+            // FR_Camber_Picturebox
+            // 
+            this.FR_Camber_Picturebox.BackColor = System.Drawing.Color.Transparent;
+            this.FR_Camber_Picturebox.Location = new System.Drawing.Point(579, 86);
+            this.FR_Camber_Picturebox.Name = "FR_Camber_Picturebox";
+            this.FR_Camber_Picturebox.Size = new System.Drawing.Size(150, 150);
+            this.FR_Camber_Picturebox.TabIndex = 16;
+            this.FR_Camber_Picturebox.TabStop = false;
+            this.FR_Camber_Picturebox.Paint += new System.Windows.Forms.PaintEventHandler(this.FR_Camber_Picturebox_Paint);
             // 
             // Tyres
             // 
@@ -1083,7 +1191,6 @@ namespace Report_Manager
             0,
             0,
             0});
-            this.Tyre_Set_Numeric.ValueChanged += new System.EventHandler(this.Tyre_Set_Numeric_ValueChanged);
             // 
             // Tyre_Set_Label
             // 
@@ -1136,12 +1243,16 @@ namespace Report_Manager
             ((System.ComponentModel.ISupportInitialize)(this.Air_Temp_Numeric)).EndInit();
             this.Suspension.ResumeLayout(false);
             this.Suspension.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Car_Model_Rear_View_Picturebox_Suspension)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Car_Model_Front_View_Picturebox_Suspension)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RR_Camber_Picturebox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RL_Camber_Picturebox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Car_Model_Side_View_Picturebox_Suspension)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FR_Caster_Picturebox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FL_Caster_Picturebox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Car_Model_Picturebox_Suspension)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FR_Picturebox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FL_Picturebox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Car_Model_Top_View_Picturebox_Suspension)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FL_Camber_Picturebox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FR_Camber_Picturebox)).EndInit();
             this.Tyres.ResumeLayout(false);
             this.Tyres.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Fuel_Left_Numeric)).EndInit();
@@ -1167,25 +1278,25 @@ namespace Report_Manager
         private System.Windows.Forms.TabControl GeneralTab;
         private System.Windows.Forms.TabPage General;
         private System.Windows.Forms.TabPage Suspension;
-        private System.Windows.Forms.PictureBox FL_Picturebox;
+        private System.Windows.Forms.PictureBox FL_Camber_Picturebox;
         private System.Windows.Forms.Label RR_label;
         private System.Windows.Forms.Label RL_label;
         private System.Windows.Forms.Label FR_label;
         private System.Windows.Forms.Label FL_label;
         private System.Windows.Forms.HScrollBar FL_camber_scroll;
         private System.Windows.Forms.TextBox FL_camber;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox General_Comment_Section;
         private System.Windows.Forms.TextBox FR_camber;
         private System.Windows.Forms.HScrollBar FR_camber_scroll;
-        private System.Windows.Forms.PictureBox FR_Picturebox;
+        private System.Windows.Forms.PictureBox FR_Camber_Picturebox;
         private System.Windows.Forms.CheckBox Front_Camber_Checkbox;
         private System.Windows.Forms.Label Driver_Label;
         private System.Windows.Forms.Label Date_Label;
         private System.Windows.Forms.TextBox Date_Textbox;
         private System.Windows.Forms.Label Comment_Label;
         private System.Windows.Forms.Label Track_Label;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Track_Name_Textbox;
+        private System.Windows.Forms.TextBox Car_Name_Textbox;
         private System.Windows.Forms.Label Car_Name_Label;
         private System.Windows.Forms.Label Caster_Label_Front;
         private System.Windows.Forms.Label Toe_Label_Front;
@@ -1232,7 +1343,7 @@ namespace Report_Manager
         private System.Windows.Forms.CheckBox Front_Tyre_Press_Checkbox;
         private System.Windows.Forms.NumericUpDown Air_Temp_Numeric;
         private System.Windows.Forms.Label Air_Temp_Label;
-        private System.Windows.Forms.PictureBox Car_Model_Picturebox_Suspension;
+        private System.Windows.Forms.PictureBox Car_Model_Top_View_Picturebox_Suspension;
         private System.Windows.Forms.NumericUpDown Fuel_Numeric;
         private System.Windows.Forms.NumericUpDown Laps_Count_Numeric;
         private System.Windows.Forms.Label Laps_Count_Label;
@@ -1246,6 +1357,15 @@ namespace Report_Manager
         private System.Windows.Forms.PictureBox FR_Caster_Picturebox;
         private System.Windows.Forms.PictureBox FL_Caster_Picturebox;
         private System.Windows.Forms.PictureBox Car_Model_Side_View_Picturebox_Suspension;
+        private System.Windows.Forms.PictureBox RR_Camber_Picturebox;
+        private System.Windows.Forms.PictureBox RL_Camber_Picturebox;
+        private System.Windows.Forms.PictureBox Car_Model_Rear_View_Picturebox_Suspension;
+        private System.Windows.Forms.PictureBox Car_Model_Front_View_Picturebox_Suspension;
+        private System.Windows.Forms.CheckBox Rear_Camber_Checkbox;
+        private System.Windows.Forms.TextBox RR_camber;
+        private System.Windows.Forms.HScrollBar RR_camber_scroll;
+        private System.Windows.Forms.TextBox RL_camber;
+        private System.Windows.Forms.HScrollBar RL_camber_scroll;
     }
 }
 
