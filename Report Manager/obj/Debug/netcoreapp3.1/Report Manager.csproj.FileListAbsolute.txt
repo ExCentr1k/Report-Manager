@@ -1,0 +1,17 @@
+F:\Programming\C#\Report Manager\Report Manager\bin\Debug\netcoreapp3.1\Report Manager.exe
+F:\Programming\C#\Report Manager\Report Manager\bin\Debug\netcoreapp3.1\Report Manager.deps.json
+F:\Programming\C#\Report Manager\Report Manager\bin\Debug\netcoreapp3.1\Report Manager.runtimeconfig.json
+F:\Programming\C#\Report Manager\Report Manager\bin\Debug\netcoreapp3.1\Report Manager.runtimeconfig.dev.json
+F:\Programming\C#\Report Manager\Report Manager\bin\Debug\netcoreapp3.1\Report Manager.dll
+F:\Programming\C#\Report Manager\Report Manager\bin\Debug\netcoreapp3.1\Report Manager.pdb
+F:\Programming\C#\Report Manager\Report Manager\obj\Debug\netcoreapp3.1\Report Manager.csproj.AssemblyReference.cache
+F:\Programming\C#\Report Manager\Report Manager\obj\Debug\netcoreapp3.1\Report_Manager.Form1.resources
+F:\Programming\C#\Report Manager\Report Manager\obj\Debug\netcoreapp3.1\Report Manager.csproj.GenerateResource.cache
+F:\Programming\C#\Report Manager\Report Manager\obj\Debug\netcoreapp3.1\Report Manager.GeneratedMSBuildEditorConfig.editorconfig
+F:\Programming\C#\Report Manager\Report Manager\obj\Debug\netcoreapp3.1\Report Manager.AssemblyInfoInputs.cache
+F:\Programming\C#\Report Manager\Report Manager\obj\Debug\netcoreapp3.1\Report Manager.AssemblyInfo.cs
+F:\Programming\C#\Report Manager\Report Manager\obj\Debug\netcoreapp3.1\Report Manager.csproj.CoreCompileInputs.cache
+F:\Programming\C#\Report Manager\Report Manager\obj\Debug\netcoreapp3.1\Report Manager.dll
+F:\Programming\C#\Report Manager\Report Manager\obj\Debug\netcoreapp3.1\Report Manager.pdb
+F:\Programming\C#\Report Manager\Report Manager\obj\Debug\netcoreapp3.1\Report Manager.genruntimeconfig.cache
+F:\Programming\C#\Report Manager\Report Manager\obj\Debug\netcoreapp3.1\Report_Manager.Properties.Resources.resources
