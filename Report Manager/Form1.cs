@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,10 +20,10 @@ namespace Report_Manager
             DateTime thisDay = DateTime.Today;
             Date_Textbox.Text = thisDay.ToString("d");
 
-            FL_camber.Text = FR_camber.Text = "0,00";
-            RL_camber.Text = RR_camber.Text = "0,00";
-            FL_toe.Text = FR_toe.Text = "0,00";
-            FL_caster.Text = FR_caster.Text = "0,00";
+            FL_Camber_Textbox.Text = FR_Camber_Textbox.Text = "0,00";
+            RL_Camber_Textbox.Text = RR_Camber_Textbox.Text = "0,00";
+            FL_Toe_Textbox.Text = FR_Toe_Textbox.Text = "0,00";
+            FL_Caster_Textbox.Text = FR_Caster_Textbox.Text = "0,00";
         }
         
         Bitmap tyre_image = Properties.Resources.tyre;
@@ -31,7 +32,6 @@ namespace Report_Manager
         private void Fuel_Calculation()
         {
             Fuel_Consumed_Textbox.Text = (Fuel_Numeric.Value - Fuel_Left_Numeric.Value).ToString();
-
         }
 
         //
@@ -41,14 +41,14 @@ namespace Report_Manager
         private void FL_camber_scroll_ValueChanged(object sender, EventArgs e)
         {
             float val;
-            val = (float)(FL_camber_scroll.Value * 0.01);
+            val = (float)(FL_Camber_Scroll.Value * 0.01);
 
-            FL_camber.Text = val.ToString("F2");
+            FL_Camber_Textbox.Text = val.ToString("F2");
 
             if (Front_Camber_Checkbox.Checked)
             {
-                FR_camber.Text = FL_camber.Text;
-                FR_camber_scroll.Value = FL_camber_scroll.Value;
+                FR_Camber_Textbox.Text = FL_Camber_Textbox.Text;
+                FR_Camber_Scroll.Value = FL_Camber_Scroll.Value;
             }
 
             FL_Camber_Picturebox.Refresh();
@@ -56,14 +56,14 @@ namespace Report_Manager
         private void FR_camber_scroll_ValueChanged(object sender, EventArgs e)
         {
             double val;
-            val = FR_camber_scroll.Value * 0.01;
+            val = FR_Camber_Scroll.Value * 0.01;
 
-            FR_camber.Text = val.ToString("F2");
+            FR_Camber_Textbox.Text = val.ToString("F2");
 
             if (Front_Camber_Checkbox.Checked)
             {
-                FL_camber.Text = FR_camber.Text;
-                FL_camber_scroll.Value = FR_camber_scroll.Value;
+                FL_Camber_Textbox.Text = FR_Camber_Textbox.Text;
+                FL_Camber_Scroll.Value = FR_Camber_Scroll.Value;
             }
 
             FR_Camber_Picturebox.Refresh();
@@ -71,14 +71,14 @@ namespace Report_Manager
         private void RL_camber_scroll_ValueChanged(object sender, EventArgs e)
         {
             float val;
-            val = (float)(RL_camber_scroll.Value * 0.01);
+            val = (float)(RL_Camber_Scroll.Value * 0.01);
         
-            RL_camber.Text = val.ToString("F2");
+            RL_Camber_Textbox.Text = val.ToString("F2");
 
             if (Rear_Camber_Checkbox.Checked)
             {
-                RR_camber.Text = RL_camber.Text;
-                RR_camber_scroll.Value = RL_camber_scroll.Value;
+                RR_Camber_Textbox.Text = RL_Camber_Textbox.Text;
+                RR_Camber_Scroll.Value = RL_Camber_Scroll.Value;
             }
 
             RL_Camber_Picturebox.Refresh();
@@ -87,14 +87,14 @@ namespace Report_Manager
         private void RR_camber_scroll_ValueChanged(object sender, EventArgs e)
         {
             double val;
-            val = RR_camber_scroll.Value * 0.01;
+            val = RR_Camber_Scroll.Value * 0.01;
 
-            RR_camber.Text = val.ToString("F2");
+            RR_Camber_Textbox.Text = val.ToString("F2");
 
             if (Rear_Camber_Checkbox.Checked)
             {
-                RL_camber.Text = RR_camber.Text;
-                RL_camber_scroll.Value = RR_camber_scroll.Value;
+                RL_Camber_Textbox.Text = RR_Camber_Textbox.Text;
+                RL_Camber_Scroll.Value = RR_Camber_Scroll.Value;
             }
 
             RR_Camber_Picturebox.Refresh();
@@ -102,28 +102,28 @@ namespace Report_Manager
 
         private void Front_Camber_Checkbox_CheckedChanged(object sender, EventArgs e)
         {    
-            if (Front_Camber_Checkbox.Checked && FL_camber.Text != "")
+            if (Front_Camber_Checkbox.Checked && FL_Camber_Textbox.Text != "")
             {
-                FR_camber.Text = FL_camber.Text;
-                FR_camber_scroll.Value = FL_camber_scroll.Value;
+                FR_Camber_Textbox.Text = FL_Camber_Textbox.Text;
+                FR_Camber_Scroll.Value = FL_Camber_Scroll.Value;
             }
-            else if (Front_Camber_Checkbox.Checked && FR_camber.Text != "")
+            else if (Front_Camber_Checkbox.Checked && FR_Camber_Textbox.Text != "")
             {
-                FL_camber.Text = FR_camber.Text;
-                FL_camber_scroll.Value = FR_camber_scroll.Value;
+                FL_Camber_Textbox.Text = FR_Camber_Textbox.Text;
+                FL_Camber_Scroll.Value = FR_Camber_Scroll.Value;
             }
         }
         private void Rear_Camber_Checkbox_CheckedChanged(object sender, EventArgs e)
         {
-            if (Rear_Camber_Checkbox.Checked && RL_camber.Text != "")
+            if (Rear_Camber_Checkbox.Checked && RL_Camber_Textbox.Text != "")
             {
-                RR_camber.Text = RL_camber.Text;
-                RR_camber_scroll.Value = RL_camber_scroll.Value;
+                RR_Camber_Textbox.Text = RL_Camber_Textbox.Text;
+                RR_Camber_Scroll.Value = RL_Camber_Scroll.Value;
             }
-            else if (Rear_Camber_Checkbox.Checked && RR_camber.Text != "")
+            else if (Rear_Camber_Checkbox.Checked && RR_Camber_Textbox.Text != "")
             {
-                RL_camber.Text = RR_camber.Text;
-                RL_camber_scroll.Value = RR_camber_scroll.Value;
+                RL_Camber_Textbox.Text = RR_Camber_Textbox.Text;
+                RL_Camber_Scroll.Value = RR_Camber_Scroll.Value;
             }
         }
         //
@@ -133,39 +133,72 @@ namespace Report_Manager
         private void FL_toe_scroll_ValueChanged(object sender, EventArgs e)
         {
             double val;
-            val = FL_toe_scroll.Value * 0.01;
-            FL_toe.Text = val.ToString("F2");
+            val = FL_Toe_Scroll.Value * 0.01;
+            FL_Toe_Textbox.Text = val.ToString("F2");
 
             if (Front_Toe_Checkbox.Checked)
             {
-                FR_toe.Text = FL_toe.Text;
-                FR_toe_scroll.Value = FL_toe_scroll.Value;
+                FR_Toe_Textbox.Text = FL_Toe_Textbox.Text;
+                FR_Toe_Scroll.Value = FL_Toe_Scroll.Value;
             }
+
+            FL_Toe_Picturebox.Refresh();
         }
 
         private void FR_toe_scroll_ValueChanged(object sender, EventArgs e)
         {
             double val;
-            val = FR_toe_scroll.Value * 0.01;
-            FR_toe.Text = val.ToString("F2");
+            val = FR_Toe_Scroll.Value * 0.01;
+            FR_Toe_Textbox.Text = val.ToString("F2");
 
             if (Front_Toe_Checkbox.Checked)
             {
-                FL_toe.Text = FR_toe.Text;
-                FL_toe_scroll.Value = FR_toe_scroll.Value;
+                FL_Toe_Textbox.Text = FR_Toe_Textbox.Text;
+                FL_Toe_Scroll.Value = FR_Toe_Scroll.Value;
             }
+
+            FR_Toe_Picturebox.Refresh();
+        }
+        private void RL_Toe_Scroll_ValueChanged(object sender, EventArgs e)
+        {
+            double val;
+            val = RL_Toe_Scroll.Value * 0.01;
+            RL_Toe_Textbox.Text = val.ToString("F2");
+
+            if (Rear_Toe_Checkbox.Checked)
+            {
+                RR_Toe_Textbox.Text = RL_Toe_Textbox.Text;
+                RR_Toe_Scroll.Value = RL_Toe_Scroll.Value;
+            }
+
+            RL_Toe_Picturebox.Refresh();
+        }
+
+        private void RR_Toe_Scroll_ValueChanged(object sender, EventArgs e)
+        {
+            double val;
+            val = RR_Toe_Scroll.Value * 0.01;
+            RR_Toe_Textbox.Text = val.ToString("F2");
+
+            if (Rear_Toe_Checkbox.Checked)
+            {
+                RL_Toe_Textbox.Text = RR_Toe_Textbox.Text;
+                RL_Toe_Scroll.Value = RR_Toe_Scroll.Value;
+            }
+
+            RR_Toe_Picturebox.Refresh();
         }
         private void Front_Toe_Checkbox_CheckedChanged(object sender, EventArgs e)
         {
-            if (Front_Toe_Checkbox.Checked && FL_toe.Text != null)
+            if (Front_Toe_Checkbox.Checked && FL_Toe_Textbox.Text != null)
             {
-                FR_toe.Text = FL_toe.Text;
-                FR_toe_scroll.Value = FL_toe_scroll.Value;
+                FR_Toe_Textbox.Text = FL_Toe_Textbox.Text;
+                FR_Toe_Scroll.Value = FL_Toe_Scroll.Value;
             }
-            else if (Front_Toe_Checkbox.Checked && FR_toe.Text != null)
+            else if (Front_Toe_Checkbox.Checked && FR_Toe_Textbox.Text != null)
             {
-                FL_toe.Text = FR_toe.Text;
-                FL_toe_scroll.Value = FR_toe_scroll.Value;
+                FL_Toe_Textbox.Text = FR_Toe_Textbox.Text;
+                FL_Toe_Scroll.Value = FR_Toe_Scroll.Value;
             }
         }
 
@@ -176,13 +209,13 @@ namespace Report_Manager
         private void FL_caster_scroll_ValueChanged(object sender, EventArgs e)
         {
             double val;
-            val = FL_caster_scroll.Value * 0.01;
-            FL_caster.Text = val.ToString("F2");
+            val = FL_Caster_Scroll.Value * 0.01;
+            FL_Caster_Textbox.Text = val.ToString("F2");
 
             if (Front_Caster_Checkbox.Checked)
             {
-                FR_caster.Text = FL_caster.Text;
-                FR_caster_scroll.Value = FL_caster_scroll.Value;
+                FR_Caster_Textbox.Text = FL_Caster_Textbox.Text;
+                FR_Caster_Scroll.Value = FL_Caster_Scroll.Value;
             }
 
             FL_Caster_Picturebox.Refresh();
@@ -191,18 +224,46 @@ namespace Report_Manager
         private void FR_caster_scroll_ValueChanged(object sender, EventArgs e)
         {
             double val;
-            val = FR_caster_scroll.Value * 0.01;
-            FR_caster.Text = val.ToString("F2");
+            val = FR_Caster_Scroll.Value * 0.01;
+            FR_Caster_Textbox.Text = val.ToString("F2");
 
             if (Front_Caster_Checkbox.Checked)
             {
-                FL_caster.Text = FR_caster.Text;
-                FL_caster_scroll.Value = FR_caster_scroll.Value;
+                FL_Caster_Textbox.Text = FR_Caster_Textbox.Text;
+                FL_Caster_Scroll.Value = FR_Caster_Scroll.Value;
             }
 
             FR_Caster_Picturebox.Refresh();
         }
 
+        private void RL_Caster_Scroll_ValueChanged(object sender, EventArgs e)
+        {
+            double val;
+            val = RL_Caster_Scroll.Value * 0.01;
+            RL_Caster_Textbox.Text = val.ToString("F2");
+
+            if (Rear_Caster_Checkbox.Checked)
+            {
+                RR_Caster_Textbox.Text = RL_Caster_Textbox.Text;
+                RR_Caster_Scroll.Value = RL_Caster_Scroll.Value;
+            }
+
+            RL_Caster_Picturebox.Refresh();
+        }
+        private void RR_Caster_Scroll_ValueChanged(object sender, EventArgs e)
+        {
+            double val;
+            val = RR_Caster_Scroll.Value * 0.01;
+            RR_Caster_Textbox.Text = val.ToString("F2");
+
+            if (Rear_Caster_Checkbox.Checked)
+            {
+                RL_Caster_Textbox.Text = RR_Caster_Textbox.Text;
+                RL_Caster_Scroll.Value = RR_Caster_Scroll.Value;
+            }
+
+            RR_Caster_Picturebox.Refresh();
+        }
         //
         //  Tyre Pressure Adjustment Section
         //
@@ -212,10 +273,10 @@ namespace Report_Manager
             if (Tyre_Press_PSI_Button.Checked)
             {            
                 // Converting Bars to PSI
-                FL_Press_Numeric.Value *= 14.50377M;
-                FR_Press_Numeric.Value *= 14.50377M;
-                RL_Press_Numeric.Value *= 14.50377M;
-                RR_Press_Numeric.Value *= 14.50377M;
+                FL_Press_Numeric.Value *= 14.504M;
+                FR_Press_Numeric.Value *= 14.504M;
+                RL_Press_Numeric.Value *= 14.504M;
+                RR_Press_Numeric.Value *= 14.504M;
             }
         }
 
@@ -223,11 +284,11 @@ namespace Report_Manager
         {
             if (Tyre_Press_Bar_Button.Checked)
             {
-            // Converting PSI to Bars
-            FL_Press_Numeric.Value /= 14.50377M;
-            FR_Press_Numeric.Value /= 14.50377M;
-            RL_Press_Numeric.Value /= 14.50377M;
-            RR_Press_Numeric.Value /= 14.50377M;
+                // Converting PSI to Bars
+                FL_Press_Numeric.Value /= 14.504M;
+                FR_Press_Numeric.Value /= 14.504M;
+                RL_Press_Numeric.Value /= 14.504M;
+                RR_Press_Numeric.Value /= 14.504M;
             }
         }
 
@@ -305,11 +366,18 @@ namespace Report_Manager
         private void ImageRotate(float angle, PaintEventArgs e, PictureBox picturebox, Bitmap image)
         {
             Graphics gr = e.Graphics;
+            Pen myPen = new Pen(Brushes.Red, 2);
+            int width_offset = 10, height_offset = 10;
+
+            int image_width_center = image.Width / 2;
+            //SetPictureboxSize(tyre_image, FL_Camber_Picturebox);
+
+            gr.DrawLine(myPen, image_width_center + width_offset, 0, image_width_center + width_offset, tyre_image.Height);
 
             gr.TranslateTransform(image.Width / 2, image.Height / 2);
             gr.RotateTransform(-angle);
             gr.TranslateTransform(-image.Width / 2, -image.Height / 2);
-            gr.DrawImage(image, 10, 10);
+            gr.DrawImage(image, width_offset, height_offset);
         }
 
         private void SetPictureboxSize(Bitmap image, PictureBox picturebox)
@@ -319,6 +387,7 @@ namespace Report_Manager
         }
 
         // Car Models Painting
+
         private void Car_Model_Top_View_Picturebox_Suspension_Paint(object sender, PaintEventArgs e)
         {
             Bitmap car_model = Properties.Resources.car_model;
@@ -360,13 +429,14 @@ namespace Report_Manager
         }
 
         // Camber Angle Painting
+
         private void FL_Camber_Picturebox_Paint(object sender, PaintEventArgs e)
         {
             Graphics gr = e.Graphics;
             float angle;
-
+            
             // Image Angle of Rotation
-            angle = Convert.ToSingle(FL_camber_scroll.Value * 0.01);
+            angle = Convert.ToSingle(FL_Camber_Scroll.Value * 0.01);
 
             ImageRotate(angle, e, FL_Camber_Picturebox, tyre_image);
         }
@@ -377,7 +447,7 @@ namespace Report_Manager
             float angle;
 
             // Image Angle of Rotation
-            angle = Convert.ToSingle(FR_camber_scroll.Value * 0.01);
+            angle = Convert.ToSingle(FR_Camber_Scroll.Value * 0.01);
 
             ImageRotate(-angle, e, FR_Camber_Picturebox, tyre_image);
         }
@@ -387,7 +457,7 @@ namespace Report_Manager
             float angle;
 
             // Image Angle of Rotation
-            angle = Convert.ToSingle(RL_camber_scroll.Value * 0.01);
+            angle = Convert.ToSingle(RL_Camber_Scroll.Value * 0.01);
 
             ImageRotate(angle, e, RL_Camber_Picturebox, tyre_image);
         }
@@ -398,19 +468,20 @@ namespace Report_Manager
             float angle;
 
             // Image Angle of Rotation
-            angle = Convert.ToSingle(RR_camber_scroll.Value * 0.01);
+            angle = Convert.ToSingle(RR_Camber_Scroll.Value * 0.01);
 
             ImageRotate(-angle, e, RR_Camber_Picturebox, tyre_image);
         }
 
         // Caster Angle Painting
+
         private void FL_Caster_Picturebox_Paint(object sender, PaintEventArgs e)
         {
             Graphics gr = e.Graphics;
             float angle;
 
             // Image Angle of Rotation
-            angle = Convert.ToSingle(FL_caster_scroll.Value * 0.01);
+            angle = Convert.ToSingle(FL_Caster_Scroll.Value * 0.01);
 
             ImageRotate(angle, e, FL_Caster_Picturebox, caster_image);
         }
@@ -421,9 +492,85 @@ namespace Report_Manager
             float angle;
 
             // Image Angle of Rotation
-            angle = Convert.ToSingle(FR_caster_scroll.Value * 0.01);
+            angle = Convert.ToSingle(FR_Caster_Scroll.Value * 0.01);
 
             ImageRotate(angle, e, FR_Caster_Picturebox, caster_image);
+        }
+        private void RL_Caster_Picturebox_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics gr = e.Graphics;
+            float angle;
+
+            // Image Angle of Rotation
+            angle = Convert.ToSingle(RL_Caster_Scroll.Value * 0.01);
+
+            ImageRotate(angle, e, RL_Caster_Picturebox, caster_image);
+        }
+
+        private void RR_Caster_Picturebox_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics gr = e.Graphics;
+            float angle;
+
+            // Image Angle of Rotation
+            angle = Convert.ToSingle(RR_Caster_Scroll.Value * 0.01);
+
+            ImageRotate(angle, e, RR_Caster_Picturebox, caster_image);
+        }
+        // Toe Angle Painting
+
+        private void FL_Toe_Picturebox_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics gr = e.Graphics;
+            float angle;
+
+            // Image Angle of Rotation
+            angle = Convert.ToSingle(FL_Toe_Scroll.Value * 0.01);
+
+            ImageRotate(-angle, e, FL_Toe_Picturebox, tyre_image);
+        }
+
+        private void FR_Toe_Picturebox_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics gr = e.Graphics;
+            float angle;
+
+            // Image Angle of Rotation
+            angle = Convert.ToSingle(FR_Toe_Scroll.Value * 0.01);
+
+            ImageRotate(angle, e, FR_Toe_Picturebox, tyre_image);
+        }
+
+        private void RL_Toe_Picturebox_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics gr = e.Graphics;
+            float angle;
+
+            // Image Angle of Rotation
+            angle = Convert.ToSingle(RL_Toe_Scroll.Value * 0.01);
+
+            ImageRotate(-angle, e, RL_Toe_Picturebox, tyre_image);
+        }
+
+        private void RR_Toe_Picturebox_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics gr = e.Graphics;
+            float angle;
+
+            // Image Angle of Rotation
+            angle = Convert.ToSingle(RR_Toe_Scroll.Value * 0.01);
+
+            ImageRotate(angle, e, RR_Toe_Picturebox, tyre_image);
+        }
+
+        private void Brake_Balance_Picturebox_Paint(object sender, PaintEventArgs e)
+        {
+            Bitmap car_model = Properties.Resources.car_model_side_view;
+            Graphics gr = e.Graphics;
+
+            SetPictureboxSize(car_model, Brake_Balance_Picturebox);
+
+            gr.DrawImage(car_model, 0, 0, Brake_Balance_Picturebox.Width, Brake_Balance_Picturebox.Height);
         }
     }
 }
